@@ -1,0 +1,73 @@
+export const styles = {
+  heroSection: {
+    background: 'linear-gradient(135deg, #0f172a 0%, #1e40af 50%, #4338ca 100%)',
+    minHeight: '85vh',
+    color: 'white',
+    padding: '8rem 1rem',
+    position: 'relative' as const,
+    overflow: 'hidden',
+  },
+  heroTitle: {
+    fontSize: 'clamp(3rem, 8vw, 6rem)',
+    fontWeight: 900,
+    background: 'linear-gradient(to right, #ffffff, #bfdbfe, #ddd6fe)',
+    WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
+    marginBottom: '1.5rem',
+    lineHeight: 1.1,
+  },
+  button: {
+    background: 'linear-gradient(to right, #facc15, #eab308)',
+    color: '#0f172a',
+    padding: '1rem 2.5rem',
+    borderRadius: '0.75rem',
+    fontWeight: 'bold',
+    border: 'none',
+    cursor: 'pointer',
+    fontSize: '1.125rem',
+    boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
+    transition: 'all 0.3s ease',
+  },
+  nav: {
+    position: 'fixed' as const,
+    top: 0,
+    left: 0,
+    right: 0,
+    zIndex: 50,
+    background: 'rgba(255, 255, 255, 0.1)',
+    backdropFilter: 'blur(10px)',
+    borderBottom: '1px solid rgba(255, 255, 255, 0.2)',
+    padding: '1rem 0',
+  },
+  serviceCard: {
+    background: 'rgba(255, 255, 255, 0.7)',
+    backdropFilter: 'blur(10px)',
+    padding: '2rem',
+    borderRadius: '1rem',
+    boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
+    border: '1px solid rgba(148, 163, 184, 0.5)',
+    transition: 'all 0.3s ease',
+    cursor: 'pointer',
+  },
+  iconContainer: {
+    width: '3rem',
+    height: '3rem',
+    borderRadius: '0.75rem',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: '1.5rem',
+    color: 'white',
+  },
+  pageContainer: {
+    minHeight: '100vh',
+    background: '#f8fafc',
+    padding: '5rem 1rem'
+  },
+  card: {
+    background: 'white',
+    borderRadius: '0.5rem',
+    boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
+    padding: '2rem'
+  }
+};
