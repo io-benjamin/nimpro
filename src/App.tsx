@@ -11,13 +11,13 @@ const App: React.FC = () => {
   const renderCurrentPage = () => {
     switch (currentPage) {
       case 'home':
-        return <HomePage />;
+        return <HomePage setCurrentPage={setCurrentPage} />;
       case 'about':
         return <AboutPage />;
       case 'contact':
         return <ContactPage />;
       default:
-        return <HomePage />;
+        return <HomePage setCurrentPage={setCurrentPage} />;
     }
   };
 

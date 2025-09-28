@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Zap } from 'lucide-react';
 import { styles } from '../styles/styles';
 
 interface NavProps {
@@ -8,8 +7,6 @@ interface NavProps {
 }
 
 const Navigation: React.FC<NavProps> = ({ currentPage, setCurrentPage }) => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
   const navItems = [
     { id: 'home', label: 'Home' },
     { id: 'about', label: 'About' },
@@ -18,23 +15,38 @@ const Navigation: React.FC<NavProps> = ({ currentPage, setCurrentPage }) => {
 
   const isHomePage = currentPage === 'home';
 
+  const handlePageChange = (page: string) => {
+    setCurrentPage(page);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <nav style={{
       ...styles.nav,
-      background: isHomePage ? 'rgba(255, 255, 255, 0.1)' : 'rgba(255, 255, 255, 0.95)',
+      background: isHomePage ? 'rgba(0, 0, 0, 0.3)' : 'rgba(255, 255, 255, 0.95)',
       color: isHomePage ? 'white' : '#0f172a'
     }}>
       <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <div style={{ display: 'flex', alignItems: 'center' }}>
-          <Zap style={{ height: '2rem', width: '2rem', color: isHomePage ? '#facc15' : '#2563eb', marginRight: '0.75rem' }} />
-          <span style={{ fontWeight: 900, fontSize: '1.25rem' }}>NIMPRO</span>
+        <div style={{ display: 'flex', alignItems: 'center', marginLeft: '-0.5rem' }}> 
+          <img 
+            src="/nimproLogo.png" 
+            alt="NIMPRO Logo" 
+            onClick={() => handlePageChange('home')}
+            style={{ 
+              height: '3rem', 
+              width: '4rem', 
+              filter: isHomePage ? 'brightness(0) invert(1)' : 'none',
+              marginRight: '0.75rem',
+              cursor: 'pointer'
+            }} 
+          />
         </div>
         
         <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
           {navItems.map((item) => (
             <button
               key={item.id}
-              onClick={() => setCurrentPage(item.id)}
+              onClick={() => handlePageChange(item.id)}
               style={{
                 padding: '0.5rem 1rem',
                 borderRadius: '0.5rem',
@@ -58,7 +70,7 @@ const Navigation: React.FC<NavProps> = ({ currentPage, setCurrentPage }) => {
             cursor: 'pointer',
             fontSize: '0.875rem',
           }}>
-            (804) 555-0123
+            (804) 386-4911
           </button>
         </div>
       </div>

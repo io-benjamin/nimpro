@@ -2,7 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { Zap, Shield, Wrench, Building, Lightbulb, CheckCircle } from 'lucide-react';
 import { styles } from '../styles/styles';
 
-const HomePage: React.FC = () => {
+interface HomePageProps {
+  setCurrentPage: (page: string) => void;
+}
+
+const HomePage: React.FC<HomePageProps> = ({ setCurrentPage }) => {
   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
@@ -123,6 +127,7 @@ const HomePage: React.FC = () => {
           
           <button 
             style={styles.button}
+            onClick={() => setCurrentPage('contact')}
             onMouseEnter={(e) => {
               e.currentTarget.style.transform = 'scale(1.05)';
               e.currentTarget.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.2)';
@@ -148,7 +153,7 @@ const HomePage: React.FC = () => {
       <section style={{ 
         paddingTop: '14rem', 
         paddingBottom: '5rem', 
-        background: 'linear-gradient(to bottom, #f8fafc, white)',
+        background: 'linear-gradient(to bottom, #b9c1c8ff, white)',
         opacity: servicesOpacity,
         transform: `translateY(${servicesTransform}px)`,
         transition: 'all 0.7s ease'

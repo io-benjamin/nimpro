@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Phone, Mail, MapPin } from 'lucide-react';
+import { styles } from '../styles/styles';
 
 const ContactPage: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -32,64 +33,81 @@ const ContactPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-20">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-4xl font-bold text-center text-gray-900 mb-12">Contact Us</h1>
+    <div style={styles.pageContainer}>
+      <div style={styles.contactContainer}>
+        <h1 style={styles.sectionTitle}>Contact Us</h1>
         
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div style={styles.gridContact}>
           <div>
-            <h2 className="text-2xl font-bold text-blue-900 mb-6">Get In Touch</h2>
-            <p className="text-gray-700 mb-8 text-lg">
+            <h2 style={{ 
+              fontSize: '1.5rem', 
+              fontWeight: 'bold', 
+              color: '#1e40af', 
+              marginBottom: '1.5rem' 
+            }}>
+              Get In Touch
+            </h2>
+            <p style={styles.contactIntro}>
               Ready to discuss your electrical project? Contact NIMPRO Electrical Inc. today for a free 
               consultation and estimate. We're here to help with all your commercial and industrial electrical needs.
             </p>
             
-            <div className="space-y-6">
-              <div className="flex items-start">
-                <Phone className="h-6 w-6 text-blue-600 mr-4 mt-1" />
+            <div style={styles.contactInfoSection}>
+              <div style={styles.contactInfoItem}>
+                <Phone style={styles.contactIcon} />
                 <div>
-                  <h3 className="font-semibold text-gray-900">Phone</h3>
-                  <p className="text-gray-700">(804) 555-0123</p>
-                  <p className="text-sm text-gray-500">24/7 Emergency Services Available</p>
+                  <h3 style={styles.contactInfoTitle}>Phone</h3>
+                  <p style={styles.contactInfoText}>(804) 386-4911</p>
+                  <p style={styles.contactInfoSubtext}>24/7 Emergency Services Available</p>
                 </div>
               </div>
               
-              <div className="flex items-start">
-                <Mail className="h-6 w-6 text-blue-600 mr-4 mt-1" />
+              <div style={styles.contactInfoItem}>
+                <Mail style={styles.contactIcon} />
                 <div>
-                  <h3 className="font-semibold text-gray-900">Email</h3>
-                  <p className="text-gray-700">info@nimproelectrical.com</p>
-                  <p className="text-sm text-gray-500">We respond within 24 hours</p>
+                  <h3 style={styles.contactInfoTitle}>Email</h3>
+                  <p style={styles.contactInfoText}>info@nimproelectrical.com</p>
+                  <p style={styles.contactInfoSubtext}>We respond within 24 hours</p>
                 </div>
               </div>
               
-              <div className="flex items-start">
-                <MapPin className="h-6 w-6 text-blue-600 mr-4 mt-1" />
+              <div style={styles.contactInfoItem}>
+                <MapPin style={styles.contactIcon} />
                 <div>
-                  <h3 className="font-semibold text-gray-900">Service Area</h3>
-                  <p className="text-gray-700">Richmond, VA and surrounding areas</p>
-                  <p className="text-sm text-gray-500">Central Virginia region</p>
+                  <h3 style={styles.contactInfoTitle}>Service Area</h3>
+                  <p style={styles.contactInfoText}>Richmond, VA and surrounding areas</p>
+                  <p style={styles.contactInfoSubtext}>Central Virginia region</p>
                 </div>
               </div>
             </div>
 
-            <div className="mt-8 p-6 bg-blue-50 rounded-lg">
-              <h3 className="font-bold text-blue-900 mb-3">Business Hours</h3>
-              <div className="text-gray-700 space-y-1">
+            <div style={styles.businessHours}>
+              <h3 style={styles.businessHoursTitle}>Business Hours</h3>
+              <div style={styles.businessHoursText}>
                 <p>Monday - Friday: 7:00 AM - 5:00 PM</p>
                 <p>Saturday: 8:00 AM - 2:00 PM</p>
                 <p>Sunday: Emergency calls only</p>
-                <p className="text-sm text-blue-600 font-medium mt-2">Emergency services available 24/7</p>
+                <p style={styles.businessHoursEmergency}>
+                  Emergency services available 24/7
+                </p>
               </div>
             </div>
           </div>
 
-          <div className="bg-white rounded-lg shadow-lg p-8">
-            <h2 className="text-2xl font-bold text-blue-900 mb-6">Request a Quote</h2>
-            <div className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-4">
+          <div style={styles.formCard}>
+            <h2 style={{ 
+              fontSize: '1.5rem', 
+              fontWeight: 'bold', 
+              color: '#1e40af', 
+              marginBottom: '1.5rem' 
+            }}>
+              Request a Free Quote
+            </h2>
+            
+            <div style={styles.formSection}>
+              <div style={styles.gridForm}>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label style={styles.formLabel}>
                     Full Name *
                   </label>
                   <input
@@ -97,11 +115,13 @@ const ContactPage: React.FC = () => {
                     name="name"
                     value={formData.name}
                     onChange={handleInputChange}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    style={styles.formInput}
+                    onFocus={(e) => e.target.style.borderColor = '#2563eb'}
+                    onBlur={(e) => e.target.style.borderColor = '#d1d5db'}
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label style={styles.formLabel}>
                     Email Address *
                   </label>
                   <input
@@ -109,14 +129,16 @@ const ContactPage: React.FC = () => {
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    style={styles.formInput}
+                    onFocus={(e) => e.target.style.borderColor = '#2563eb'}
+                    onBlur={(e) => e.target.style.borderColor = '#d1d5db'}
                   />
                 </div>
               </div>
 
-              <div className="grid md:grid-cols-2 gap-4">
+              <div style={styles.gridForm}>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label style={styles.formLabel}>
                     Phone Number *
                   </label>
                   <input
@@ -124,11 +146,13 @@ const ContactPage: React.FC = () => {
                     name="phone"
                     value={formData.phone}
                     onChange={handleInputChange}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    style={styles.formInput}
+                    onFocus={(e) => e.target.style.borderColor = '#2563eb'}
+                    onBlur={(e) => e.target.style.borderColor = '#d1d5db'}
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label style={styles.formLabel}>
                     Company Name
                   </label>
                   <input
@@ -136,20 +160,24 @@ const ContactPage: React.FC = () => {
                     name="company"
                     value={formData.company}
                     onChange={handleInputChange}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    style={styles.formInput}
+                    onFocus={(e) => e.target.style.borderColor = '#2563eb'}
+                    onBlur={(e) => e.target.style.borderColor = '#d1d5db'}
                   />
                 </div>
               </div>
 
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+              <div style={{ marginBottom: '1rem' }}>
+                <label style={styles.formLabel}>
                   Service Needed
                 </label>
                 <select
                   name="service"
                   value={formData.service}
                   onChange={handleInputChange}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  style={styles.formInput}
+                  onFocus={(e) => e.target.style.borderColor = '#2563eb'}
+                  onBlur={(e) => e.target.style.borderColor = '#d1d5db'}
                 >
                   <option value="">Select a service</option>
                   <option value="commercial-installation">Commercial Installation</option>
@@ -163,8 +191,8 @@ const ContactPage: React.FC = () => {
                 </select>
               </div>
 
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+              <div style={{ marginBottom: '1.5rem' }}>
+                <label style={styles.formLabel}>
                   Project Details
                 </label>
                 <textarea
@@ -173,13 +201,17 @@ const ContactPage: React.FC = () => {
                   value={formData.message}
                   onChange={handleInputChange}
                   placeholder="Please describe your project requirements, timeline, and any specific needs..."
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                ></textarea>
+                  style={styles.formTextarea}
+                  onFocus={(e) => e.target.style.borderColor = '#2563eb'}
+                  onBlur={(e) => e.target.style.borderColor = '#d1d5db'}
+                />
               </div>
 
               <button
                 onClick={handleSubmit}
-                className="w-full bg-blue-600 text-white py-3 px-4 rounded-md hover:bg-blue-700 transition-colors font-semibold"
+                style={styles.submitButton}
+                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#1d4ed8'}
+                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#2563eb'}
               >
                 Send Message
               </button>

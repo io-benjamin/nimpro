@@ -1,3 +1,4 @@
+// Shared styles for the entire application
 export const styles = {
   heroSection: {
     background: 'linear-gradient(135deg, #0f172a 0%, #1e40af 50%, #4338ca 100%)',
@@ -34,7 +35,7 @@ export const styles = {
     left: 0,
     right: 0,
     zIndex: 50,
-    background: 'rgba(255, 255, 255, 0.1)',
+    background: 'rgba(183, 146, 146, 0.22)',
     backdropFilter: 'blur(10px)',
     borderBottom: '1px solid rgba(255, 255, 255, 0.2)',
     padding: '1rem 0',
@@ -62,12 +63,340 @@ export const styles = {
   pageContainer: {
     minHeight: '100vh',
     background: '#f8fafc',
-    padding: '5rem 1rem'
+    padding: '5rem 1rem',
+    paddingTop: '8rem', // Extra padding to account for fixed nav
   },
   card: {
     background: 'white',
     borderRadius: '0.5rem',
     boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
-    padding: '2rem'
-  }
+    padding: '2rem',
+    marginBottom: '2rem',
+  },
+  // Page layout styles
+  contentContainer: {
+    maxWidth: '1200px',
+    margin: '0 auto',
+    padding: '0 1rem',
+  },
+  sectionTitle: {
+    fontSize: '2.5rem',
+    fontWeight: 'bold',
+    textAlign: 'center' as const,
+    marginBottom: '3rem',
+    color: '#111827',
+  },
+  subsectionTitle: {
+    fontSize: '1.875rem',
+    fontWeight: 'bold',
+    color: '#1e40af',
+    marginBottom: '1.5rem',
+  },
+  // Text styles
+  bodyText: {
+    fontSize: '1.125rem',
+    color: '#374151',
+    lineHeight: 1.7,
+    marginBottom: '1.5rem',
+  },
+  smallText: {
+    fontSize: '0.875rem',
+    color: '#6b7280',
+  },
+  // Layout helpers
+  grid2: {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+    gap: '2rem',
+  },
+  gridContact: {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))',
+    gap: '3rem',
+  },
+  gridServices: {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+    gap: '1.5rem',
+  },
+  gridForm: {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+    gap: '1rem',
+    marginBottom: '1rem',
+  },
+  flexCenter: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  flexStart: {
+    display: 'flex',
+    alignItems: 'start',
+  },
+  flexBetween: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  // ABOUT PAGE STYLES
+  aboutContainer: {
+    maxWidth: '64rem',
+    margin: '0 auto',
+  },
+  missionCard: {
+    background: 'white',
+    borderRadius: '0.5rem',
+    boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
+    padding: '2rem',
+  },
+  valuesCard: {
+    background: 'white',
+    borderRadius: '0.5rem',
+    boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
+    padding: '2rem',
+  },
+  valuesList: {
+    color: '#374151',
+    listStyle: 'none',
+    padding: 0,
+  },
+  valuesListItem: {
+    display: 'flex',
+    alignItems: 'start',
+    marginBottom: '0.5rem',
+  },
+  valuesIcon: {
+    height: '1.25rem',
+    width: '1.25rem',
+    color: '#2563eb',
+    marginRight: '0.5rem',
+    marginTop: '0.125rem',
+    flexShrink: 0,
+  },
+  expertiseTitle: {
+    fontSize: '1.25rem',
+    fontWeight: 600,
+    color: '#111827',
+    marginBottom: '0.75rem',
+  },
+  expertiseList: {
+    color: '#374151',
+    lineHeight: 1.6,
+  },
+  licensedSection: {
+    background: '#1e40af',
+    color: 'white',
+    borderRadius: '0.5rem',
+    boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
+    padding: '2rem',
+    textAlign: 'center' as const,
+  },
+  licensedTitle: {
+    fontSize: '1.5rem',
+    fontWeight: 'bold',
+    marginBottom: '1rem',
+  },
+  licensedText: {
+    color: '#bfdbfe',
+    marginBottom: '1rem',
+  },
+  licensedBadges: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    gap: '2rem',
+    fontSize: '0.875rem',
+    flexWrap: 'wrap' as const,
+  },
+  licensedBadge: {
+    textAlign: 'center' as const,
+  },
+  licensedIcon: {
+    height: '2rem',
+    width: '2rem',
+    color: '#facc15',
+    margin: '0 auto 0.5rem',
+  },
+  // CONTACT PAGE STYLES
+  contactContainer: {
+    maxWidth: '72rem',
+    margin: '0 auto',
+  },
+  contactIntro: {
+    color: '#374151',
+    marginBottom: '2rem',
+    fontSize: '1.125rem',
+    lineHeight: 1.6,
+  },
+  contactInfoSection: {
+    marginBottom: '2rem',
+  },
+  contactInfoItem: {
+    display: 'flex',
+    alignItems: 'start',
+    marginBottom: '1.5rem',
+  },
+  contactIcon: {
+    height: '1.5rem',
+    width: '1.5rem',
+    color: '#2563eb',
+    marginRight: '1rem',
+    marginTop: '0.125rem',
+    flexShrink: 0,
+  },
+  contactInfoTitle: {
+    fontWeight: 600,
+    color: '#111827',
+    marginBottom: '0.25rem',
+  },
+  contactInfoText: {
+    color: '#374151',
+    marginBottom: '0.25rem',
+  },
+  contactInfoSubtext: {
+    fontSize: '0.875rem',
+    color: '#6b7280',
+  },
+  businessHours: {
+    padding: '1.5rem',
+    background: '#eff6ff',
+    borderRadius: '0.5rem',
+    border: '1px solid #dbeafe',
+  },
+  businessHoursTitle: {
+    fontWeight: 'bold',
+    color: '#1e40af',
+    marginBottom: '0.75rem',
+  },
+  businessHoursText: {
+    color: '#374151',
+    lineHeight: 1.6,
+  },
+  businessHoursEmergency: {
+    fontSize: '0.875rem',
+    color: '#2563eb',
+    fontWeight: 500,
+    marginTop: '0.5rem',
+  },
+  // Form styles
+  formCard: {
+    background: 'white',
+    borderRadius: '0.5rem',
+    boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
+    padding: '2rem',
+  },
+  formSection: {
+    marginBottom: '1.5rem',
+  },
+  formInput: {
+    width: '100%',
+    padding: '0.75rem',
+    border: '1px solid #d1d5db',
+    borderRadius: '0.375rem',
+    fontSize: '1rem',
+    outline: 'none',
+    transition: 'border-color 0.3s ease',
+  },
+  formTextarea: {
+    width: '100%',
+    padding: '0.75rem',
+    border: '1px solid #d1d5db',
+    borderRadius: '0.375rem',
+    fontSize: '1rem',
+    outline: 'none',
+    transition: 'border-color 0.3s ease',
+    resize: 'vertical' as const,
+    minHeight: '100px',
+  },
+  formLabel: {
+    display: 'block',
+    fontSize: '0.875rem',
+    fontWeight: 500,
+    color: '#374151',
+    marginBottom: '0.5rem',
+  },
+  submitButton: {
+    width: '100%',
+    background: '#2563eb',
+    color: 'white',
+    padding: '0.75rem 1rem',
+    borderRadius: '0.375rem',
+    border: 'none',
+    fontWeight: 600,
+    cursor: 'pointer',
+    fontSize: '1rem',
+    transition: 'background-color 0.3s ease',
+  },
+  // FOOTER STYLES
+  footer: {
+    background: '#111827',
+    color: 'white',
+    padding: '3rem 1rem',
+  },
+  footerContainer: {
+    maxWidth: '1200px',
+    margin: '0 auto',
+  },
+  footerGrid: {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+    gap: '2rem',
+    marginBottom: '2rem',
+  },
+  footerBrand: {
+    display: 'flex',
+    alignItems: 'center',
+    marginBottom: '1rem',
+  },
+  footerLogo: {
+    height: '2rem',
+    width: '2rem',
+    color: '#facc15',
+    marginRight: '0.75rem',
+  },
+  footerBrandText: {
+    fontWeight: 'bold',
+    fontSize: '1.25rem',
+  },
+  footerDescription: {
+    color: '#d1d5db',
+    marginBottom: '1rem',
+    lineHeight: 1.6,
+  },
+  footerTagline: {
+    fontSize: '0.875rem',
+    color: '#9ca3af',
+  },
+  footerSectionTitle: {
+    fontWeight: 'bold',
+    fontSize: '1.125rem',
+    marginBottom: '1rem',
+  },
+  footerList: {
+    color: '#d1d5db',
+    listStyle: 'none',
+    padding: 0,
+    lineHeight: 1.8,
+  },
+  footerContactList: {
+    color: '#d1d5db',
+  },
+  footerContactItem: {
+    display: 'flex',
+    alignItems: 'center',
+    marginBottom: '0.75rem',
+  },
+  footerContactIcon: {
+    height: '1rem',
+    width: '1rem',
+    marginRight: '0.5rem',
+    flexShrink: 0,
+  },
+  footerBottom: {
+    borderTop: '1px solid #374151',
+    paddingTop: '2rem',
+    textAlign: 'center' as const,
+    color: '#9ca3af',
+  },
 };

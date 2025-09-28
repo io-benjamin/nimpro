@@ -1,102 +1,117 @@
 import React from 'react';
 import { Shield, CheckCircle, Lightbulb, Building, Zap } from 'lucide-react';
+import { styles } from '../styles/styles';
 
 const AboutPage: React.FC = () => {
   return (
-    <div className="min-h-screen bg-gray-50 py-20">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-4xl font-bold text-center text-gray-900 mb-12">Who We Are</h1>
+    <div style={styles.pageContainer}>
+      <div style={styles.aboutContainer}>
+        <h1 style={styles.sectionTitle}>Who We Are</h1>
         
-        <div className="bg-white rounded-lg shadow-lg p-8 mb-12">
-          <h2 className="text-3xl font-bold text-blue-900 mb-6">About NIMPRO Electrical Inc.</h2>
-          <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+        <div style={styles.card}>
+          <h2 style={styles.subsectionTitle}>About NIMPRO Electrical Inc.</h2>
+          <p style={styles.bodyText}>
             Established in 2025, NIMPRO Electrical Inc. is a Class A licensed electrical contracting company 
             based in Richmond, Virginia. We specialize in providing comprehensive commercial and industrial 
             electrical solutions throughout the Richmond metropolitan area and surrounding regions.
           </p>
-          <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+          <p style={styles.bodyText}>
             As a Master Electrician-led company, we bring decades of combined experience to every project, 
             ensuring the highest standards of workmanship, safety, and code compliance. Our commitment to 
             excellence has quickly established us as a trusted partner for businesses throughout Central Virginia.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
-          <div className="bg-white rounded-lg shadow-lg p-8">
-            <h3 className="text-2xl font-bold text-blue-900 mb-4">Our Mission</h3>
-            <p className="text-gray-700 leading-relaxed">
+        <div style={styles.grid2}>
+          <div style={styles.missionCard}>
+            <h3 style={{ 
+              fontSize: '1.5rem', 
+              fontWeight: 'bold', 
+              color: '#1e40af', 
+              marginBottom: '1rem' 
+            }}>
+              Our Mission
+            </h3>
+            <p style={{ color: '#374151', lineHeight: 1.7 }}>
               To provide safe, reliable, and innovative electrical solutions that power businesses and 
               support economic growth throughout Central Virginia. We are committed to delivering 
               exceptional service while maintaining the highest safety standards in every project we undertake.
             </p>
           </div>
           
-          <div className="bg-white rounded-lg shadow-lg p-8">
-            <h3 className="text-2xl font-bold text-blue-900 mb-4">Our Values</h3>
-            <ul className="text-gray-700 space-y-2">
-              <li className="flex items-start">
-                <Shield className="h-5 w-5 text-blue-600 mr-2 mt-1 flex-shrink-0" />
+          <div style={styles.valuesCard}>
+            <h3 style={{ 
+              fontSize: '1.5rem', 
+              fontWeight: 'bold', 
+              color: '#1e40af', 
+              marginBottom: '1rem' 
+            }}>
+              Our Values
+            </h3>
+            <ul style={styles.valuesList}>
+              <li style={styles.valuesListItem}>
+                <Shield style={styles.valuesIcon} />
                 Safety first in everything we do
               </li>
-              <li className="flex items-start">
-                <CheckCircle className="h-5 w-5 text-blue-600 mr-2 mt-1 flex-shrink-0" />
+              <li style={styles.valuesListItem}>
+                <CheckCircle style={styles.valuesIcon} />
                 Quality workmanship and attention to detail
               </li>
-              <li className="flex items-start">
-                <Lightbulb className="h-5 w-5 text-blue-600 mr-2 mt-1 flex-shrink-0" />
+              <li style={styles.valuesListItem}>
+                <Lightbulb style={styles.valuesIcon} />
                 Innovation and energy efficiency
               </li>
-              <li className="flex items-start">
-                <Building className="h-5 w-5 text-blue-600 mr-2 mt-1 flex-shrink-0" />
+              <li style={styles.valuesListItem}>
+                <Building style={styles.valuesIcon} />
                 Professional integrity and reliability
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="bg-white rounded-lg shadow-lg p-8 mb-12">
-          <h3 className="text-2xl font-bold text-blue-900 mb-6">Our Expertise</h3>
-          <div className="grid md:grid-cols-2 gap-6">
+        <div style={styles.card}>
+          <h3 style={styles.subsectionTitle}>Our Expertise</h3>
+          <div style={styles.gridServices}>
             <div>
-              <h4 className="text-xl font-semibold text-gray-900 mb-3">Commercial Services</h4>
-              <ul className="text-gray-700 space-y-2">
-                <li>• Office building electrical systems</li>
-                <li>• Retail and restaurant installations</li>
-                <li>• Healthcare facility electrical work</li>
-                <li>• Educational institution projects</li>
-                <li>• LED lighting retrofits and upgrades</li>
+              <h4 style={styles.expertiseTitle}>Commercial Services</h4>
+              <ul style={styles.expertiseList}>
+                <li>Office building electrical systems</li>
+                <li>Retail and restaurant installations</li>
+                <li>Healthcare facility electrical work</li>
+                <li>Educational institution projects</li>
+                <li>LED lighting retrofits and upgrades</li>
               </ul>
             </div>
             <div>
-              <h4 className="text-xl font-semibold text-gray-900 mb-3">Industrial Services</h4>
-              <ul className="text-gray-700 space-y-2">
-                <li>• Manufacturing facility electrical systems</li>
-                <li>• Power distribution and motor control</li>
-                <li>• Industrial automation and controls</li>
-                <li>• Equipment wiring and installations</li>
-                <li>• Emergency power systems</li>
+              <h4 style={styles.expertiseTitle}>Industrial Services</h4>
+              <ul style={styles.expertiseList}>
+                <li>Manufacturing facility electrical systems</li>
+                <li>Power distribution and motor control</li>
+                <li>Industrial automation and controls</li>
+                <li>Equipment wiring and installations</li>
+                <li>Emergency power systems</li>
               </ul>
             </div>
           </div>
         </div>
 
-        <div className="bg-blue-900 text-white rounded-lg shadow-lg p-8 text-center">
-          <h3 className="text-2xl font-bold mb-4">Licensed & Insured</h3>
-          <p className="text-blue-100 mb-4">
+        <div style={styles.licensedSection}>
+          <h3 style={styles.licensedTitle}>Licensed & Insured</h3>
+          <p style={styles.licensedText}>
             NIMPRO Electrical Inc. is a fully licensed Class A electrical contractor in the Commonwealth of Virginia, 
             with comprehensive insurance coverage for your peace of mind.
           </p>
-          <div className="flex justify-center items-center space-x-8 text-sm">
-            <div>
-              <CheckCircle className="h-8 w-8 text-yellow-400 mx-auto mb-2" />
+          <div style={styles.licensedBadges}>
+            <div style={styles.licensedBadge}>
+              <CheckCircle style={styles.licensedIcon} />
               <p>Class A Licensed</p>
             </div>
-            <div>
-              <Shield className="h-8 w-8 text-yellow-400 mx-auto mb-2" />
+            <div style={styles.licensedBadge}>
+              <Shield style={styles.licensedIcon} />
               <p>Fully Insured</p>
             </div>
-            <div>
-              <Zap className="h-8 w-8 text-yellow-400 mx-auto mb-2" />
+            <div style={styles.licensedBadge}>
+              <Zap style={styles.licensedIcon} />
               <p>Master Electrician</p>
             </div>
           </div>
