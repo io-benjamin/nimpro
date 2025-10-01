@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, Mail, MapPin, Zap } from 'lucide-react';
+import { Phone, Mail, MapPin } from 'lucide-react';
 import { styles } from '../styles/styles';
 
 const Footer: React.FC = () => {
@@ -55,7 +55,7 @@ const Footer: React.FC = () => {
               </div>
               <div style={styles.footerContactItem}>
                 <Mail style={styles.footerContactIcon} />
-                <span>info@nimproelectrical.com</span>
+                <span>cgarcia@nimproelectrical.com</span>
               </div>
               <div style={styles.footerContactItem}>
                 <MapPin style={styles.footerContactIcon} />

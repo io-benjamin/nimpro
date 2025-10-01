@@ -12,6 +12,8 @@ const ContactPage: React.FC = () => {
     message: ''
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({
@@ -20,16 +22,17 @@ const ContactPage: React.FC = () => {
     }));
   };
 
-  const handleSubmit = () => {
-    alert('Thank you for your message! We will contact you within 24 hours.');
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      company: '',
-      service: '',
-      message: ''
-    });
+  const handleSubmit = (e: React.FormEvent) => {
+    // Basic validation
+    if (!formData.name || !formData.email || !formData.phone) {
+      e.preventDefault();
+      alert('Please fill in all required fields (Name, Email, Phone)');
+      return;
+    }
+
+    setIsSubmitting(true);
+    // Netlify will handle the form submission automatically
+    // The form will redirect to a thank you page or show success message
   };
 
   return (
@@ -66,7 +69,7 @@ const ContactPage: React.FC = () => {
                 <Mail style={styles.contactIcon} />
                 <div>
                   <h3 style={styles.contactInfoTitle}>Email</h3>
-                  <p style={styles.contactInfoText}>info@nimproelectrical.com</p>
+                  <p style={styles.contactInfoText}>cgarcia@nimproelectrical.com</p>
                   <p style={styles.contactInfoSubtext}>We respond within 24 hours</p>
                 </div>
               </div>
@@ -104,7 +107,22 @@ const ContactPage: React.FC = () => {
               Request a Free Quote
             </h2>
             
-            <div style={styles.formSection}>
+            <form 
+              name="contact" 
+              method="POST" 
+              data-netlify="true" 
+              netlify-honeypot="bot-field"
+              onSubmit={handleSubmit} 
+              style={styles.formSection}
+            >
+              {/* Hidden field for Netlify Forms */}
+              <input type="hidden" name="form-name" value="contact" />
+              {/* Honeypot field for spam protection */}
+              <p style={{ display: 'none' }}>
+                <label>
+                  Don't fill this out if you're human: <input name="bot-field" />
+                </label>
+              </p>
               <div style={styles.gridForm}>
                 <div>
                   <label style={styles.formLabel}>
@@ -208,14 +226,23 @@ const ContactPage: React.FC = () => {
               </div>
 
               <button
-                onClick={handleSubmit}
-                style={styles.submitButton}
-                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#1d4ed8'}
-                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#2563eb'}
+                type="submit"
+                disabled={isSubmitting}
+                style={{
+                  ...styles.submitButton,
+                  backgroundColor: isSubmitting ? '#9ca3af' : '#2563eb',
+                  cursor: isSubmitting ? 'not-allowed' : 'pointer'
+                }}
+                onMouseEnter={(e) => {
+                  if (!isSubmitting) e.currentTarget.style.backgroundColor = '#1d4ed8';
+                }}
+                onMouseLeave={(e) => {
+                  if (!isSubmitting) e.currentTarget.style.backgroundColor = '#2563eb';
+                }}
               >
-                Send Message
+                {isSubmitting ? 'Sending...' : 'Send Message'}
               </button>
-            </div>
+            </form>
           </div>
         </div>
       </div>

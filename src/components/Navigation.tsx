@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { styles } from '../styles/styles';
 
 interface NavProps {
@@ -60,18 +60,23 @@ const Navigation: React.FC<NavProps> = ({ currentPage, setCurrentPage }) => {
               {item.label}
             </button>
           ))}
-          <button style={{
-            background: 'linear-gradient(to right, #facc15, #eab308)',
-            color: '#0f172a',
-            padding: '0.5rem 1rem',
-            borderRadius: '1.5rem',
-            border: 'none',
-            fontWeight: 'bold',
-            cursor: 'pointer',
-            fontSize: '0.875rem',
-          }}>
+          <a 
+            href="tel:+18043864911"
+            style={{
+              background: 'linear-gradient(to right, #facc15, #eab308)',
+              color: '#0f172a',
+              padding: '0.5rem 1rem',
+              borderRadius: '1.5rem',
+              border: 'none',
+              fontWeight: 'bold',
+              cursor: 'pointer',
+              fontSize: '0.875rem',
+              textDecoration: 'none',
+              display: 'inline-block',
+            }}
+          >
             (804) 386-4911
-          </button>
+          </a>
         </div>
       </div>
     </nav>
