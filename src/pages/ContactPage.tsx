@@ -63,6 +63,7 @@ Service Type: ${formData.service || 'Not specified'}
 💬 PROJECT DETAILS:
 ${formData.message || 'No additional details provided.'}
 
+═══════════════════════════════════════════════
 ⚡ NIMPRO Electrical Inc. - Richmond's Premier Electrical Contractors
 📞 (804) 386-4911 | 🌐 https://nimproelectrical.com
 
@@ -75,8 +76,7 @@ ${formData.message || 'No additional details provided.'}
             minute: '2-digit',
             timeZoneName: 'short'
           })}
-═══════════════════════════════════════════════
-`
+          `
         })
       });
 
