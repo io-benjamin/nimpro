@@ -11,6 +11,10 @@
   # Ensure Node.js version compatibility
   NODE_VERSION = "18"
 
+# Form settings
+[[forms]]
+  name = "contact"
+  
 # Redirect rules for React Router (if you add routing later)
 [[redirects]]
   from = "/*"

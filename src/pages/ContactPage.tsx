@@ -23,16 +23,45 @@ const ContactPage: React.FC = () => {
   };
 
   const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
     // Basic validation
     if (!formData.name || !formData.email || !formData.phone) {
-      e.preventDefault();
       alert('Please fill in all required fields (Name, Email, Phone)');
       return;
     }
 
     setIsSubmitting(true);
-    // Netlify will handle the form submission automatically
-    // The form will redirect to a thank you page or show success message
+
+    // Submit form data to Netlify
+    const form = e.target as HTMLFormElement;
+    const formDataToSubmit = new FormData(form);
+    
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(formDataToSubmit as any).toString()
+    })
+    .then(() => {
+      // Success popup
+      alert('Thank you for your message! We will contact you within 24 hours.');
+      
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        company: '',
+        service: '',
+        message: ''
+      });
+    })
+    .catch(() => {
+      alert('Sorry, there was an error sending your message. Please call us directly at (804) 386-4911.');
+    })
+    .finally(() => {
+      setIsSubmitting(false);
+    });
   };
 
   return (
@@ -117,6 +146,8 @@ const ContactPage: React.FC = () => {
             >
               {/* Hidden field for Netlify Forms */}
               <input type="hidden" name="form-name" value="contact" />
+              {/* Hidden field for email notifications */}
+              <input type="hidden" name="subject" value="New Contact Form Submission - NIMPRO Electrical" />
               {/* Honeypot field for spam protection */}
               <p style={{ display: 'none' }}>
                 <label>
