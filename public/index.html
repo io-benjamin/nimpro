@@ -16,6 +16,27 @@
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
+    
+    <!-- Hidden form for Netlify Forms detection -->
+    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+      <input type="text" name="company" />
+      <select name="service">
+        <option value="">Select a service</option>
+        <option value="commercial-installation">Commercial Installation</option>
+        <option value="industrial-installation">Industrial Installation</option>
+        <option value="power-distribution">Power Distribution Systems</option>
+        <option value="lighting-controls">LED Lighting & Controls</option>
+        <option value="design-build">Design-Build Support</option>
+        <option value="maintenance">Maintenance & Troubleshooting</option>
+        <option value="emergency">Emergency Service</option>
+        <option value="other">Other</option>
+      </select>
+      <textarea name="message"></textarea>
+    </form>
+    
     <div id="root"></div>
     <!--
       This HTML file is a template.

@@ -22,7 +22,7 @@ const ContactPage: React.FC = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     // Basic validation
@@ -33,17 +33,24 @@ const ContactPage: React.FC = () => {
 
     setIsSubmitting(true);
 
-    // Submit form data to Netlify
-    const form = e.target as HTMLFormElement;
-    const formDataToSubmit = new FormData(form);
-    
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams(formDataToSubmit as any).toString()
-    })
-    .then(() => {
-      // Success popup
+    try {
+      // Encode form data for Netlify
+      const encode = (data: any) => {
+        return Object.keys(data)
+          .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+          .join("&");
+      };
+
+      await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({
+          "form-name": "contact",
+          ...formData
+        })
+      });
+
+      // Success
       alert('Thank you for your message! We will contact you within 24 hours.');
       
       // Reset form
@@ -55,13 +62,13 @@ const ContactPage: React.FC = () => {
         service: '',
         message: ''
       });
-    })
-    .catch(() => {
+
+    } catch (error) {
+      console.error('Error:', error);
       alert('Sorry, there was an error sending your message. Please call us directly at (804) 386-4911.');
-    })
-    .finally(() => {
+    } finally {
       setIsSubmitting(false);
-    });
+    }
   };
 
   return (
