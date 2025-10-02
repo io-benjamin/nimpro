@@ -27,21 +27,21 @@ const Navigation: React.FC<NavProps> = ({ currentPage, setCurrentPage }) => {
       color: isHomePage ? 'white' : '#0f172a'
     }}>
       <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <div style={{ display: 'flex', alignItems: 'center', marginLeft: '-0.5rem' }}> 
-          <img 
-            src="/nimproLogo.png" 
-            alt="NIMPRO Logo" 
+        <div style={{ display: 'flex', alignItems: 'center', marginLeft: '-0.5rem' }}>
+          <img
+            src="/nimproLogo.png"
+            alt="NIMPRO Logo"
             onClick={() => handlePageChange('home')}
-            style={{ 
-              height: '3rem', 
-              width: '4rem', 
+            style={{
+              height: '3rem',
+              width: '4rem',
               filter: isHomePage ? 'brightness(0) invert(1)' : 'none',
               marginRight: '0.75rem',
               cursor: 'pointer'
-            }} 
+            }}
           />
         </div>
-        
+
         <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
           {navItems.map((item) => (
             <button
@@ -60,7 +60,7 @@ const Navigation: React.FC<NavProps> = ({ currentPage, setCurrentPage }) => {
               {item.label}
             </button>
           ))}
-          <a 
+          <a
             href="tel:+18043864911"
             style={{
               background: 'linear-gradient(to right, #facc15, #eab308)',

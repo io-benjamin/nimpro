@@ -9,28 +9,28 @@ const Footer: React.FC = () => {
         <div style={styles.footerGrid}>
           <div>
             <div style={styles.footerBrand}>
-          <img 
-            src="/nimproLogo.png" 
-            alt="NIMPRO Logo" 
-            style={{ 
-              height: '2rem', 
-              width: '2rem', 
-              filter: 'brightness(0) invert(1)',
-              marginRight: '0.75rem' 
-            }} 
-          /><span style={styles.footerBrandText}>
+              <img
+                src="/nimproLogo.png"
+                alt="NIMPRO Logo"
+                style={{
+                  height: '2rem',
+                  width: '2rem',
+                  filter: 'brightness(0) invert(1)',
+                  marginRight: '0.75rem'
+                }}
+              /><span style={styles.footerBrandText}>
                 NIMPRO Electrical Inc.
               </span>
             </div>
             <p style={styles.footerDescription}>
-              Professional electrical contractor serving Richmond, VA and surrounding areas with 
+              Professional electrical contractor serving Richmond, VA and surrounding areas with
               commercial and industrial electrical solutions.
             </p>
             <p style={styles.footerTagline}>
               Class A Licensed | Master Electrician | Established 2025
             </p>
           </div>
-          
+
           <div>
             <h3 style={styles.footerSectionTitle}>
               Services
@@ -43,7 +43,7 @@ const Footer: React.FC = () => {
               <li>Maintenance & Troubleshooting</li>
             </ul>
           </div>
-          
+
           <div>
             <h3 style={styles.footerSectionTitle}>
               Contact Info
@@ -64,7 +64,7 @@ const Footer: React.FC = () => {
             </div>
           </div>
         </div>
-        
+
         <div style={styles.footerBottom}>
           <p>&copy; 2025 NIMPRO Electrical Inc. All rights reserved.</p>
         </div>

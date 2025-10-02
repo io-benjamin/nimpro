@@ -24,7 +24,7 @@ const ContactPage: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Basic validation
     if (!formData.name || !formData.email || !formData.phone) {
       alert('Please fill in all required fields (Name, Email, Phone)');
@@ -46,13 +46,36 @@ const ContactPage: React.FC = () => {
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: encode({
           "form-name": "contact",
-          ...formData
+          "subject": "🔌 New Lead: Contact Form Submission - NIMPRO Electrical",
+          "email-template": "professional",
+          ...formData,
+          // Add formatted message for better email presentation
+          "formatted-inquiry": `
+NEW ELECTRICAL INQUIRY - NIMPRO ELECTRICAL INC.
+═══════════════════════════════════════════════
+
+📋 CUSTOMER INFORMATION:
+Name: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone}
+Company: ${formData.company || 'Not provided'}
+
+🔧 SERVICE DETAILS:
+Service Type: ${formData.service || 'Not specified'}
+
+💬 PROJECT DETAILS:
+${formData.message || 'No additional details provided.'}
+
+═══════════════════════════════════════════════
+⚡ NIMPRO Electrical Inc. - Richmond's Premier Electrical Contractors
+📞 (804) 386-4911 | 🌐 https://nimproelectrical.com
+          `
         })
       });
 
       // Success
       alert('Thank you for your message! We will contact you within 24 hours.');
-      
+
       // Reset form
       setFormData({
         name: '',
@@ -75,22 +98,22 @@ const ContactPage: React.FC = () => {
     <div style={styles.pageContainer}>
       <div style={styles.contactContainer}>
         <h1 style={styles.sectionTitle}>Contact Us</h1>
-        
+
         <div style={styles.gridContact}>
           <div>
-            <h2 style={{ 
-              fontSize: '1.5rem', 
-              fontWeight: 'bold', 
-              color: '#1e40af', 
-              marginBottom: '1.5rem' 
+            <h2 style={{
+              fontSize: '1.5rem',
+              fontWeight: 'bold',
+              color: '#1e40af',
+              marginBottom: '1.5rem'
             }}>
               Get In Touch
             </h2>
             <p style={styles.contactIntro}>
-              Ready to discuss your electrical project? Contact NIMPRO Electrical Inc. today for a free 
+              Ready to discuss your electrical project? Contact NIMPRO Electrical Inc. today for a free
               consultation and estimate. We're here to help with all your commercial and industrial electrical needs.
             </p>
-            
+
             <div style={styles.contactInfoSection}>
               <div style={styles.contactInfoItem}>
                 <Phone style={styles.contactIcon} />
@@ -100,7 +123,7 @@ const ContactPage: React.FC = () => {
                   <p style={styles.contactInfoSubtext}>24/7 Emergency Services Available</p>
                 </div>
               </div>
-              
+
               <div style={styles.contactInfoItem}>
                 <Mail style={styles.contactIcon} />
                 <div>
@@ -109,7 +132,7 @@ const ContactPage: React.FC = () => {
                   <p style={styles.contactInfoSubtext}>We respond within 24 hours</p>
                 </div>
               </div>
-              
+
               <div style={styles.contactInfoItem}>
                 <MapPin style={styles.contactIcon} />
                 <div>
@@ -134,21 +157,21 @@ const ContactPage: React.FC = () => {
           </div>
 
           <div style={styles.formCard}>
-            <h2 style={{ 
-              fontSize: '1.5rem', 
-              fontWeight: 'bold', 
-              color: '#1e40af', 
-              marginBottom: '1.5rem' 
+            <h2 style={{
+              fontSize: '1.5rem',
+              fontWeight: 'bold',
+              color: '#1e40af',
+              marginBottom: '1.5rem'
             }}>
               Request a Free Quote
             </h2>
-            
-            <form 
-              name="contact" 
-              method="POST" 
-              data-netlify="true" 
+
+            <form
+              name="contact"
+              method="POST"
+              data-netlify="true"
               netlify-honeypot="bot-field"
-              onSubmit={handleSubmit} 
+              onSubmit={handleSubmit}
               style={styles.formSection}
             >
               {/* Hidden field for Netlify Forms */}
