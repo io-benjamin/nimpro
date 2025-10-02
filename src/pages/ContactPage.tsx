@@ -47,16 +47,13 @@ const ContactPage: React.FC = () => {
         body: encode({
           "form-name": "contact",
           "subject": "🔌 New Lead: Contact Form Submission - NIMPRO Electrical",
-          "customer-name": formData.name,
-          "customer-email": formData.email,
-          "customer-phone": formData.phone,
           // Send only the formatted inquiry to avoid duplicates
           "inquiry-details": `
 NEW ELECTRICAL INQUIRY - NIMPRO ELECTRICAL INC.
 ═══════════════════════════════════════════════
 
 📋 CUSTOMER INFORMATION:
-Name: ${formData.name}
+Customer Name: ${formData.name}
 Email: ${formData.email}
 Phone: ${formData.phone}
 Company: ${formData.company || 'Not provided'}
@@ -71,15 +68,15 @@ ${formData.message || 'No additional details provided.'}
 ⚡ NIMPRO Electrical Inc. - Richmond's Premier Electrical Contractors
 📞 (804) 386-4911 | 🌐 https://nimproelectrical.com
 
-📅 Submitted: ${new Date().toLocaleString('en-US', { 
-  weekday: 'long', 
-  year: 'numeric', 
-  month: 'long', 
-  day: 'numeric', 
-  hour: '2-digit', 
-  minute: '2-digit',
-  timeZoneName: 'short'
-})}
+📅 Submitted: ${new Date().toLocaleString('en-US', {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit',
+            timeZoneName: 'short'
+          })}
           `
         })
       });
