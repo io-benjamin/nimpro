@@ -23,7 +23,7 @@ const Footer: React.FC = () => {
               </span>
             </div>
             <p style={styles.footerDescription}>
-              Professional electrical contractor serving Richmond, VA and surrounding areas with
+              Professional electrical contractor serving all of Virginia with
               commercial and industrial electrical solutions.
             </p>
             <p style={styles.footerTagline}>
@@ -59,7 +59,7 @@ const Footer: React.FC = () => {
               </div>
               <div style={styles.footerContactItem}>
                 <MapPin style={styles.footerContactIcon} />
-                <span>Richmond, VA & Surrounding Areas</span>
+                <span>Richmond-Based, Virginia-Wide</span>
               </div>
             </div>
           </div>

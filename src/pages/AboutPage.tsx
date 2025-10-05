@@ -13,12 +13,12 @@ const AboutPage: React.FC = () => {
           <p style={styles.bodyText}>
             Established in 2025, NIMPRO Electrical Inc. is a Class A licensed electrical contracting company
             based in Richmond, Virginia. We specialize in providing comprehensive commercial and industrial
-            electrical solutions throughout the Richmond metropolitan area and surrounding regions.
+            electrical solutions throughout the Virginia Region.
           </p>
           <p style={styles.bodyText}>
             As a Master Electrician-led company, we bring decades of combined experience to every project,
             ensuring the highest standards of workmanship, safety, and code compliance. Our commitment to
-            excellence has quickly established us as a trusted partner for businesses throughout Central Virginia.
+            excellence has quickly established us as a trusted partner for businesses throughout the Virginia Region.
           </p>
         </div>
 
@@ -34,7 +34,7 @@ const AboutPage: React.FC = () => {
             </h3>
             <p style={{ color: '#374151', lineHeight: 1.7 }}>
               To provide safe, reliable, and innovative electrical solutions that power businesses and
-              support economic growth throughout Central Virginia. We are committed to delivering
+              support economic growth throughout Virginia. We are committed to delivering
               exceptional service while maintaining the highest safety standards in every project we undertake.
             </p>
           </div>

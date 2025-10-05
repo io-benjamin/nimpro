@@ -66,6 +66,7 @@ const HomePage: React.FC<HomePageProps> = ({ setCurrentPage }) => {
           ...styles.heroSection,
           transform: `translateY(${titleTransform}px)`,
           zIndex: 10,
+          paddingTop: '8rem',
         }}
       >
         <div style={{
@@ -73,7 +74,8 @@ const HomePage: React.FC<HomePageProps> = ({ setCurrentPage }) => {
           margin: '0 auto',
           textAlign: 'center',
           position: 'relative',
-          zIndex: 10
+          zIndex: 10,
+          padding: '0 1rem'
         }}>
           <h1 style={styles.heroTitle}>
             NIMPRO Electrical Inc.
@@ -83,27 +85,29 @@ const HomePage: React.FC<HomePageProps> = ({ setCurrentPage }) => {
             marginBottom: '1rem',
             fontWeight: 'bold'
           }}>
-            Richmond's Premier Electrical Contractors
+            Virginia Based Commerical & Industrial Electrical Contractors
           </p>
           <p style={{
-            fontSize: '1.25rem',
+            fontSize: 'clamp(1rem, 3vw, 1.25rem)',
             marginBottom: '2rem',
             maxWidth: '64rem',
             margin: '0 auto 2rem',
             lineHeight: 1.6,
-            color: '#cbd5e1'
+            color: '#cbd5e1',
+            padding: '0 0.5rem'
           }}>
             From complex industrial installations to energy-efficient LED upgrades, we deliver safe,
             reliable electrical solutions that keep your business running smoothly. Class A licensed,
-            Master Electrician-led, and trusted by Richmond businesses since 2025.
+            Master Electrician-led, and trusted by Virginia businesses since 2025.
           </p>
 
           <div style={{
             display: 'flex',
             justifyContent: 'center',
-            gap: '2rem',
+            gap: 'clamp(1rem, 4vw, 2rem)',
             marginBottom: '2rem',
-            flexWrap: 'wrap'
+            flexWrap: 'wrap',
+            padding: '0 1rem'
           }}>
             <div style={{ display: 'flex', alignItems: 'center' }}>
               <CheckCircle style={{
@@ -126,7 +130,12 @@ const HomePage: React.FC<HomePageProps> = ({ setCurrentPage }) => {
           </div>
 
           <button
-            style={styles.button}
+            style={{
+              ...styles.button,
+              padding: 'clamp(0.75rem, 3vw, 1rem) clamp(1.5rem, 5vw, 2.5rem)',
+              fontSize: 'clamp(1rem, 3vw, 1.125rem)',
+              margin: '0 1rem'
+            }}
             onClick={() => setCurrentPage('contact')}
             onMouseEnter={(e) => {
               e.currentTarget.style.transform = 'scale(1.05)';
@@ -137,7 +146,7 @@ const HomePage: React.FC<HomePageProps> = ({ setCurrentPage }) => {
               e.currentTarget.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1)';
             }}
           >
-            Get Free Quote Today
+            Let's Get Started
           </button>
           <p style={{
             fontSize: '0.875rem',
@@ -173,8 +182,9 @@ const HomePage: React.FC<HomePageProps> = ({ setCurrentPage }) => {
 
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-            gap: '2rem'
+            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gap: 'clamp(1rem, 3vw, 2rem)',
+            padding: '0 0.5rem'
           }}>
             {services.map((service, index) => (
               <div
@@ -196,9 +206,9 @@ const HomePage: React.FC<HomePageProps> = ({ setCurrentPage }) => {
                   <service.icon style={{ height: '2rem', width: '2rem' }} />
                 </div>
                 <h3 style={{
-                  fontSize: '1.25rem',
+                  fontSize: 'clamp(1.125rem, 3.5vw, 1.25rem)',
                   fontWeight: 'bold',
-                  marginBottom: '1rem',
+                  marginBottom: 'clamp(0.75rem, 2vw, 1rem)',
                   color: '#0f172a'
                 }}>
                   {service.title}

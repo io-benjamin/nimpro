@@ -117,8 +117,7 @@ ${formData.message || 'No additional details provided.'}
               Get In Touch
             </h2>
             <p style={styles.contactIntro}>
-              Ready to discuss your electrical project? Contact NIMPRO Electrical Inc. today for a free
-              consultation and estimate. We're here to help with all your commercial and industrial electrical needs.
+              We'd love to be a part of making your project come to life. Contact NIMPRO Electrical Inc. today for a consultation and estimate. We're here to help bring your electrical vision to reality.
             </p>
 
             <div style={styles.contactInfoSection}>
@@ -127,16 +126,16 @@ ${formData.message || 'No additional details provided.'}
                 <div>
                   <h3 style={styles.contactInfoTitle}>Phone</h3>
                   <p style={styles.contactInfoText}>(804) 386-4911</p>
-                  <p style={styles.contactInfoSubtext}>24/7 Emergency Services Available</p>
+                  <p style={styles.contactInfoSubtext}>Fast Response for Project Estimates</p>
                 </div>
               </div>
 
               <div style={styles.contactInfoItem}>
                 <Mail style={styles.contactIcon} />
                 <div>
-                  <h3 style={styles.contactInfoTitle}>Email</h3>
+                  <h3 style={styles.contactInfoTitle}>Email Us</h3>
                   <p style={styles.contactInfoText}>cgarcia@nimproelectrical.com</p>
-                  <p style={styles.contactInfoSubtext}>We respond within 24 hours</p>
+                  <p style={styles.contactInfoSubtext}>Foward All Bids Here</p>
                 </div>
               </div>
 
@@ -144,8 +143,8 @@ ${formData.message || 'No additional details provided.'}
                 <MapPin style={styles.contactIcon} />
                 <div>
                   <h3 style={styles.contactInfoTitle}>Service Area</h3>
-                  <p style={styles.contactInfoText}>Richmond, VA and surrounding areas</p>
-                  <p style={styles.contactInfoSubtext}>Central Virginia region</p>
+                  <p style={styles.contactInfoText}>All of Virginia</p>
+                  <p style={styles.contactInfoSubtext}>Richmond-Based, Virginia-Wide</p>
                 </div>
               </div>
             </div>
@@ -154,10 +153,9 @@ ${formData.message || 'No additional details provided.'}
               <h3 style={styles.businessHoursTitle}>Business Hours</h3>
               <div style={styles.businessHoursText}>
                 <p>Monday - Friday: 7:00 AM - 5:00 PM</p>
-                <p>Saturday: 8:00 AM - 2:00 PM</p>
-                <p>Sunday: Emergency calls only</p>
+                <p>Saturday - Sunday: 8:00 AM - 2:00 PM</p>
                 <p style={styles.businessHoursEmergency}>
-                  Emergency services available 24/7
+                  Project Consultations Available
                 </p>
               </div>
             </div>
@@ -170,7 +168,7 @@ ${formData.message || 'No additional details provided.'}
               color: '#1e40af',
               marginBottom: '1.5rem'
             }}>
-              Request a Free Quote
+              Request A Project Estimate
             </h2>
 
             <form

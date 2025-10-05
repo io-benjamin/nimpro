@@ -4,7 +4,7 @@ export const styles = {
     background: 'linear-gradient(135deg, #0f172a 0%, #1e40af 50%, #4338ca 100%)',
     minHeight: '85vh',
     color: 'white',
-    padding: '8rem 1rem',
+    padding: 'clamp(4rem, 10vw, 8rem) clamp(0.5rem, 2vw, 1rem)',
     position: 'relative' as const,
     overflow: 'hidden',
   },
@@ -38,12 +38,12 @@ export const styles = {
     background: 'rgba(183, 146, 146, 0.22)',
     backdropFilter: 'blur(10px)',
     borderBottom: '1px solid rgba(255, 255, 255, 0.2)',
-    padding: '1rem 0',
+    padding: 'clamp(1rem, 2vw, 1rem) 0',
   },
   serviceCard: {
     background: 'rgba(255, 255, 255, 0.7)',
     backdropFilter: 'blur(10px)',
-    padding: '2rem',
+    padding: 'clamp(1.5rem, 4vw, 2rem)',
     borderRadius: '1rem',
     boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
     border: '1px solid rgba(148, 163, 184, 0.5)',
@@ -80,17 +80,17 @@ export const styles = {
     padding: '0 1rem',
   },
   sectionTitle: {
-    fontSize: '2.5rem',
+    fontSize: 'clamp(2rem, 6vw, 2.5rem)',
     fontWeight: 'bold',
     textAlign: 'center' as const,
-    marginBottom: '3rem',
+    marginBottom: 'clamp(2rem, 5vw, 3rem)',
     color: '#111827',
   },
   subsectionTitle: {
-    fontSize: '1.875rem',
+    fontSize: 'clamp(1.5rem, 4vw, 1.875rem)',
     fontWeight: 'bold',
     color: '#1e40af',
-    marginBottom: '1.5rem',
+    marginBottom: 'clamp(1rem, 3vw, 1.5rem)',
   },
   // Text styles
   bodyText: {
@@ -106,18 +106,18 @@ export const styles = {
   // Layout helpers
   grid2: {
     display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-    gap: '2rem',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(clamp(280px, 85vw, 300px), 1fr))',
+    gap: 'clamp(1.5rem, 4vw, 2rem)',
   },
   gridContact: {
     display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))',
-    gap: '3rem',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(clamp(320px, 90vw, 400px), 1fr))',
+    gap: 'clamp(2rem, 5vw, 3rem)',
   },
   gridServices: {
     display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-    gap: '1.5rem',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(clamp(250px, 90vw, 320px), 1fr))',
+    gap: 'clamp(1rem, 3vw, 1.5rem)',
   },
   gridForm: {
     display: 'grid',
