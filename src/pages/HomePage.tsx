@@ -146,7 +146,7 @@ const HomePage: React.FC<HomePageProps> = ({ setCurrentPage }) => {
               e.currentTarget.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1)';
             }}
           >
-            Let's Get Started
+            Get Started
           </button>
           <p style={{
             fontSize: '0.875rem',
