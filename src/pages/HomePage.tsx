@@ -85,7 +85,7 @@ const HomePage: React.FC<HomePageProps> = ({ setCurrentPage }) => {
             marginBottom: '1rem',
             fontWeight: 'bold'
           }}>
-            Virginia Based Commerical & Industrial Electrical Contractors
+            Virginia Based Commercial & Industrial Electrical Contractors
           </p>
           <p style={{
             fontSize: 'clamp(1rem, 3vw, 1.25rem)',
